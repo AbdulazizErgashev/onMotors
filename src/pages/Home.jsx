@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { IoMdCart } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
 import Car1 from "../assets/merc/a-class.jpg";
@@ -31,12 +31,13 @@ import Car27 from "../assets/toyota/camry.png";
 import Car28 from "../assets/toyota/landcruiser.jpg";
 import Car29 from "../assets/toyota/supra.jpg";
 import Car30 from "../assets/bmw/bmw-x7.webp";
+// import { ShopContext } from "../context/ShopContext";
 
 export default function Home() {
   const [products, setProducts] = useState([
     {
       id: 1,
-      title: "Product",
+      title: "Mercedes-Benz A class",
       img: Car1,
       price: 113000,
       count: 1,
@@ -45,7 +46,7 @@ export default function Home() {
 
     {
       id: 2,
-      title: "Product",
+      title: "Mercedes-Benz C class",
       img: Car2,
       price: 113000,
       count: 1,
@@ -54,7 +55,7 @@ export default function Home() {
 
     {
       id: 3,
-      title: "Product",
+      title: "Mercedes-Benz CLS",
       img: Car3,
       price: 113000,
       count: 1,
@@ -63,7 +64,7 @@ export default function Home() {
 
     {
       id: 4,
-      title: "Product",
+      title: "Mercedes-Benz E class",
       img: Car4,
       price: 113000,
       count: 1,
@@ -72,7 +73,7 @@ export default function Home() {
 
     {
       id: 5,
-      title: "Product",
+      title: "Mercedes-Benz G class",
       img: Car5,
       price: 113000,
       count: 1,
@@ -81,7 +82,7 @@ export default function Home() {
 
     {
       id: 6,
-      title: "Product",
+      title: "Mercedes-Benz GLA",
       img: Car6,
       price: 113000,
       count: 1,
@@ -90,7 +91,7 @@ export default function Home() {
 
     {
       id: 7,
-      title: "Product",
+      title: "Mercedes-Benz GLB",
       img: Car7,
       price: 113000,
       count: 1,
@@ -99,7 +100,7 @@ export default function Home() {
 
     {
       id: 8,
-      title: "Product",
+      title: "Mercedes-Benz GLC",
       img: Car8,
       price: 113000,
       count: 1,
@@ -108,7 +109,7 @@ export default function Home() {
 
     {
       id: 9,
-      title: "Product",
+      title: "Mercedes-Benz GLE",
       img: Car9,
       price: 113000,
       count: 1,
@@ -117,7 +118,7 @@ export default function Home() {
 
     {
       id: 10,
-      title: "Product",
+      title: "Mercedes-Benz GLS",
       img: Car10,
       price: 113000,
       count: 1,
@@ -126,7 +127,7 @@ export default function Home() {
 
     {
       id: 11,
-      title: "Product",
+      title: "Mercedes-Benz MAYBACH",
       img: Car11,
       price: 113000,
       count: 1,
@@ -135,7 +136,7 @@ export default function Home() {
 
     {
       id: 12,
-      title: "Product",
+      title: "BMW M8",
       img: Car12,
       price: 113000,
       count: 1,
@@ -144,7 +145,7 @@ export default function Home() {
 
     {
       id: 13,
-      title: "Product",
+      title: "BMW 7",
       img: Car13,
       price: 113000,
       count: 1,
@@ -153,7 +154,7 @@ export default function Home() {
 
     {
       id: 14,
-      title: "Product",
+      title: "BMW M5",
       img: Car14,
       price: 113000,
       count: 1,
@@ -162,7 +163,7 @@ export default function Home() {
 
     {
       id: 15,
-      title: "Product",
+      title: "CHEVROLET EQUINOX",
       img: Car15,
       price: 113000,
       count: 1,
@@ -171,7 +172,7 @@ export default function Home() {
 
     {
       id: 16,
-      title: "Product",
+      title: "CHEVROLET GENTRA",
       img: Car16,
       price: 113000,
       count: 1,
@@ -180,7 +181,7 @@ export default function Home() {
 
     {
       id: 17,
-      title: "Product",
+      title: "CHEVROLET MALIBU",
       img: Car17,
       price: 113000,
       count: 1,
@@ -189,7 +190,7 @@ export default function Home() {
 
     {
       id: 18,
-      title: "Product",
+      title: "CHEVROLET TAHOE",
       img: Car18,
       price: 113000,
       count: 1,
@@ -198,7 +199,7 @@ export default function Home() {
 
     {
       id: 19,
-      title: "Product",
+      title: "Lamborghini Aventador",
       img: Car19,
       price: 113000,
       count: 1,
@@ -207,7 +208,7 @@ export default function Home() {
 
     {
       id: 20,
-      title: "Product",
+      title: "Lamborghini Huracan",
       img: Car20,
       price: 113000,
       count: 1,
@@ -216,7 +217,7 @@ export default function Home() {
 
     {
       id: 21,
-      title: "Product",
+      title: "Lamborghini Sian",
       img: Car21,
       price: 113000,
       count: 1,
@@ -225,7 +226,7 @@ export default function Home() {
 
     {
       id: 22,
-      title: "Product",
+      title: "Lamborghini Urus",
       img: Car22,
       price: 113000,
       count: 1,
@@ -234,7 +235,7 @@ export default function Home() {
 
     {
       id: 23,
-      title: "Product",
+      title: "Rolls-Royce Cullinan",
       img: Car23,
       price: 113000,
       count: 1,
@@ -243,7 +244,7 @@ export default function Home() {
 
     {
       id: 24,
-      title: "Product",
+      title: "Rolls-Royce Dawn",
       img: Car24,
       price: 113000,
       count: 1,
@@ -252,7 +253,7 @@ export default function Home() {
 
     {
       id: 25,
-      title: "Product",
+      title: "Rolls-Royce Ghost",
       img: Car25,
       price: 113000,
       count: 1,
@@ -261,7 +262,7 @@ export default function Home() {
 
     {
       id: 26,
-      title: "Product",
+      title: "Rolls-Royce Phantom",
       img: Car26,
       price: 113000,
       count: 1,
@@ -270,7 +271,7 @@ export default function Home() {
 
     {
       id: 27,
-      title: "Product",
+      title: "Toyota Camry",
       img: Car27,
       price: 113000,
       count: 1,
@@ -279,7 +280,7 @@ export default function Home() {
 
     {
       id: 28,
-      title: "Product",
+      title: "Toyota Land Cruiser",
       img: Car28,
       price: 113000,
       count: 1,
@@ -288,7 +289,7 @@ export default function Home() {
 
     {
       id: 29,
-      title: "Product",
+      title: "Toyota Supra",
       img: Car29,
       price: 113000,
       count: 1,
@@ -297,7 +298,7 @@ export default function Home() {
 
     {
       id: 30,
-      title: "Product",
+      title: "BMW X7",
       img: Car30,
       price: 113000,
       count: 1,
@@ -305,21 +306,44 @@ export default function Home() {
     },
   ]);
 
+  const toggleLike = (ID) => {
+    setProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.id === ID ? { ...product, like: !product.like } : product
+      )
+    );
+  };
+
   return (
     <main>
-      <section>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+      <section className="w-full max-w-[1200px] mx-auto flex items-center justify-center min-h-screen mt-28 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5 items-center">
           {products.map((item) => (
-            <div key={item.id}>
-              <img src={item.img} />
-              <h1>{item.title}</h1>
-              <p>{item.price}</p>
-              <div className="flex">
+            <div
+              key={item.id}
+              className="bg-white shadow-lg w-full flex flex-col items-center gap-3 rounded-lg"
+            >
+              <img
+                src={item.img}
+                className="object-cover w-[300px] h-[150px] rounded-t-lg"
+                alt={item.title}
+              />
+              <h1 className="text-[#006A67] text-base font-semibold text-center">
+                {item.title}
+              </h1>
+              <p className="text-sm font-semibold text-[#006A67]">
+                $ {item.price}
+              </p>
+              <div className="w-full flex items-center justify-between px-3 pb-5">
                 <button>
-                  <IoMdCart />
+                  <IoMdCart className="text-xl text-[#006A67]" />
                 </button>
-                <button>
-                  <FaHeart />
+                <button onClick={() => toggleLike(item.id)}>
+                  <FaHeart
+                    className={`${
+                      item.like ? "text-red-500" : " text-[#006A67]"
+                    } text-lg`}
+                  />
                 </button>
               </div>
             </div>
