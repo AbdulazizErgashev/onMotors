@@ -33,7 +33,7 @@ export default function Navbar() {
             onClick={() => navigate("/Favorite")}
           >
             <FaHeart className="text-lg" />
-            <span className="md:text-xl font-bold">
+            <span className="text-sm md:text-xl font-bold">
               {likedCount}
             </span>
           </div>
