@@ -31,6 +31,7 @@ import Car27 from "../assets/toyota/camry.png";
 import Car28 from "../assets/toyota/landcruiser.jpg";
 import Car29 from "../assets/toyota/supra.jpg";
 import Car30 from "../assets/bmw/bmw-x7.webp";
+import { ShopContext } from "../context/ShopContext";
 // import { ShopContext } from "../context/ShopContext";
 
 export default function Home() {
@@ -306,13 +307,7 @@ export default function Home() {
     },
   ]);
 
-  const toggleLike = (ID) => {
-    setProducts((prevProducts) =>
-      prevProducts.map((product) =>
-        product.id === ID ? { ...product, like: !product.like } : product
-      )
-    );
-  };
+  const { handleLike, liked } = useContext(ShopContext);
 
   return (
     <main>
@@ -338,10 +333,12 @@ export default function Home() {
                 <button>
                   <IoMdCart className="text-xl text-[#006A67]" />
                 </button>
-                <button onClick={() => toggleLike(item.id)}>
+                <button onClick={() => handleLike(item)}>
                   <FaHeart
                     className={`${
-                      item.like ? "text-red-500" : " text-[#006A67]"
+                      liked.some((L) => L.id === item.id)
+                        ? "text-red-500"
+                        : " text-[#006A67]"
                     } text-lg`}
                   />
                 </button>

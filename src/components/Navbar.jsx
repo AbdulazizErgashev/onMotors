@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { IoMdCart } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
+import { ShopContext } from "../context/ShopContext";
 
 export default function Navbar() {
   const navigate = useNavigate();
+  const { likedCount } = useContext(ShopContext);
 
   return (
     <main className="bg-white fixed top-0 left-0 right-0 z-50 shadow-xl">
@@ -25,14 +27,14 @@ export default function Navbar() {
           </button>
         </div>
 
-        <div className="flex items-center gap-x-3 md:gap-x-5 text-[#006a67]">
+        <div className="flex items-center gap-x-5 md:gap-x-5 text-[#006a67]">
           <div
             className="flex items-center gap-x-2 cursor-pointer transition-all duration-150 active:opacity-70"
             onClick={() => navigate("/Favorite")}
           >
             <FaHeart className="text-lg" />
-            <span className="hidden md:flex md:text-xl font-bold">
-              Favorite
+            <span className="md:text-xl font-bold">
+              {likedCount}
             </span>
           </div>
           <div
